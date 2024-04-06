@@ -44,5 +44,5 @@ Then, equal numbers were used to calculate the GCD, with the expected output as 
 
 Testing was done in the GCDCalculator class file.
 Fortunately, no errors were found with the code.
-Only positive numbers were considered, as fibonacci numbers will only be positive due to the n value being positive.
+Only positive numbers were considered, as such, fibonacci numbers will be constrained to natural numbers .
 
