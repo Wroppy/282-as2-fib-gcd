@@ -1,0 +1,29 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "run program",
+			"type": "shell",
+			"command": "mvn clean compile exec:java@run",
+			"windows": {
+				"command": "mvn clean compile exec:java@run"
+			},
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			}
+		},
+		{
+			"label": "run tests",
+			"type": "shell",
+			"command": "mvn clean compile test",
+			"windows": {
+				"command": "mvn clean compile test"
+			},
+			"group": {
+				"kind": "test",
+				"isDefault": true
+			}
+		}
+	]
+}
