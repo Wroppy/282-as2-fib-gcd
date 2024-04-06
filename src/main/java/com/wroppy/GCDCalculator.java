@@ -10,22 +10,28 @@ public class GCDCalculator {
    */
   public int calculateGCD(int a, int b) {
     // Ensures that GCD(m, n), m > n
-    int m, r;
+    int m, n;
     if (a > b) {
       m = a;
-      r = b;
+      n = b;
     } else {
       m = b;
-      r = a;
+      n = a;
     }
 
     // Base case as remainder is 0
-    if (r == 0) {
+    if (n == 0) {
+      String output = String.format("gcd(%d, %d) = %d", m, n, m);
+      System.out.println(output);
       return m;
     }
 
     // gcd(a, b) = gcd(m, r) where a = bq + r
-    return this.calculateGCD(r, m % r);
+    // Prints output code
+    int r = m % n;
+    String output = String.format("%d = %d * q + %d, now finding gcd(%d, %d)", m, n, r, n, r);
+    System.out.println(output);
+    return this.calculateGCD(n, r);
   }
 
   /**
