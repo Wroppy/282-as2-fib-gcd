@@ -3,7 +3,7 @@ package com.wroppy;
 import java.util.ArrayList;
 
 public class FibCalculator {
-  private ArrayList<Integer> fibs;
+  public ArrayList<Integer> fibs;
 
   /**
    * Constructor sets up the 2 initial conditions for the fibonacci sequence f0 =
@@ -81,5 +81,20 @@ public class FibCalculator {
     }
 
     System.out.println("No error when calculating fib");
+  }
+
+  public void findLargestFib() {
+    System.out.println(this.fib(46));
+    System.out.println(this.fib(47));
+
+    int index = 0;
+    while (true) {
+      if (this.fib(index) < 0) {
+        System.out.println("Maximum found at " + index);
+        return;
+      }
+
+      index++;
+    }
   }
 }
