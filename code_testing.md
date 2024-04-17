@@ -3,7 +3,7 @@ This markdown file documents the testing done to the program
 
 ### `int CalculateGCD(int a, int b)`
 
-To test out GCD, I test got 40 different sets of 2 numbers to test GCD on. Then, I ran through all the sets of numbers and compared the solution from a GCD calculator to my own programmed GCD
+To test out GCD, 40 different sets of 2 numbers to test GCD on. Then, I ran through all the sets of numbers and compared the solution from a GCD calculator to my own programmed GCD
 
 Getting it was done in python
 ```
@@ -44,5 +44,5 @@ Then, equal numbers were used to calculate the GCD, with the expected output as 
 
 Testing was done in the GCDCalculator class file.
 Fortunately, no errors were found with the code.
-Only positive numbers were considered, as such, fibonacci numbers will be constrained to natural numbers .
+Only positive numbers were considered, as such, fibonacci numbers will be constrained to natural numbers.
 
