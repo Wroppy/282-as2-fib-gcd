@@ -42,27 +42,10 @@ public class FibCalculator {
   }
 
   public void testFib() {
-    // Compares the time taken to calculate fib using recursion and memoisation
-    // Done at the start so there is no values apart from the default 2 fib numbers
-    // in the array
-    int n = 50;
-    long start, end;
-
-    start = System.currentTimeMillis();
-    this.fib(n);
-    end = System.currentTimeMillis();
-
-    System.out.println("Completed in " + (end - start));
-
-    start = System.currentTimeMillis();
-    this.recursiveFib(n);
-    end = System.currentTimeMillis();
-
-    System.out.println("Completed in " + (end - start));
-
+    int n;
     // Tests the fib method on set fib numbers
-    int[] nums = { 0, 1, 3, 5, 10, 15, 20, 25, 40 };
-    int[] solutions = { 0, 1, 2, 5, 55, 610, 6765, 75025, 102334155 };
+    int[] nums = { 0, 1, 3, 5, 10, 15, 20, 25, 40, 42 };
+    int[] solutions = { 0, 1, 2, 5, 55, 610, 6765, 75025, 102334155, 267914296 };
     int fib, solution;
     for (int i = 0; i < nums.length; i++) {
       solution = solutions[i];
@@ -79,22 +62,45 @@ public class FibCalculator {
       } else {
       }
     }
-
     System.out.println("No error when calculating fib");
   }
 
   public void findLargestFib() {
-    System.out.println(this.fib(46));
-    System.out.println(this.fib(47));
-
     int index = 0;
     while (true) {
       if (this.fib(index) < 0) {
-        System.out.println("Maximum found at " + index);
+        System.out.println("Maximum found at " + index + " at fib = " + this.fib(index));
+        System.out.println("Previous fib number: " + this.fib(index - 1));
         return;
       }
-
       index++;
     }
+  }
+
+  public void timeFib() {
+    int n = 42;
+    long start, end;
+
+    start = System.nanoTime();
+    this.fib(n);
+    end = System.nanoTime();
+    System.out.println("Time taken for fib: " + (end - start) + " ns");
+
+    start = System.nanoTime();
+    this.recursiveFib(n);
+    end = System.nanoTime();
+    System.out.println("Time taken for recursive fib: " + (end - start) + " ns");
+
+    // Redid test
+    start = System.nanoTime();
+    this.fib(n);
+    end = System.nanoTime();
+    System.out.println("Time taken for fib: " + (end - start) + " ns");
+
+    start = System.nanoTime();
+    this.recursiveFib(n);
+    end = System.nanoTime();
+    System.out.println("Time taken for recursive fib: " + (end - start) + " ns");
+
   }
 }
