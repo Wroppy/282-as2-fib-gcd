@@ -36,7 +36,9 @@ public class FibGCD {
   private String getString(String prompt) {
     System.out.print(prompt);
     Scanner scanner = new Scanner(System.in);
-    return scanner.nextLine();
+    String userInput = scanner.nextLine();
+    scanner.close();
+    return userInput;
   }
 
   private int getNum(String numLabel) {
@@ -48,6 +50,7 @@ public class FibGCD {
         Scanner scanner = new Scanner(System.in);
 
         num = scanner.nextInt();
+        scanner.close();
 
         // Checks for bounds
         if (num < min || num > max) {
@@ -64,5 +67,4 @@ public class FibGCD {
     System.out.println(
         "Welcome! This program that takes 2 numbers (a) and (b) and computes the greatest common\ndivisor of the fibonacci numbers at (a) and (b)");
   }
-
 }
