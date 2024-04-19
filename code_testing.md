@@ -1,4 +1,6 @@
-
+***
+Note that this file has been appended to the bottom of `README.md`
+***
 # Testing
 This markdown file documents the testing done to the program. There are multiple stages to the testing, firstly, writing and testing the base methods such as `fib(n)` and `gcd(a, b)` are high priority, as they determine the underlying output of the program. 
 
