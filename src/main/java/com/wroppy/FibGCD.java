@@ -112,7 +112,7 @@ public class FibGCD {
 
   private void printMenu() {
     System.out.println(
-        "Welcome! This program that takes 2 numbers (a) and (b) and computes the greatest common\ndivisor of the fibonacci numbers at (a) and (b)");
+        "Welcome! This program that takes 2 numbers (a) and (b) and computes the greatest common\ndivisor of the FIRST A and B fibonacci numbers.");
   }
 
   // Tests the program on some test cases
