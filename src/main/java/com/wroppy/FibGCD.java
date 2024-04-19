@@ -79,7 +79,6 @@ public class FibGCD {
     System.out.print(prompt);
     Scanner scanner = new Scanner(System.in);
     String userInput = scanner.nextLine();
-    scanner.close();
     return userInput;
   }
 
@@ -98,17 +97,16 @@ public class FibGCD {
         Scanner scanner = new Scanner(System.in);
 
         num = scanner.nextInt(); // Scans the next token of the input as an int.
-        scanner.close();
-
-        // Checks for bounds
-        if (num < min || num > max) {
-          throw new Exception();
-        }
-
-        return num;
       } catch (Exception e) {
         continue; // If the input is invalid, then ask the user again
       }
+
+      // Checks for bounds
+      if (num < min || num > max) {
+        System.out.println("Number out of bounds");
+        continue;
+      }
+      return num;
     }
   }
 

@@ -22,7 +22,7 @@ public class GCDCalculator {
 
     // Base case as remainder is 0
     if (n == 0) {
-      // String output = String.format("gcd(%d, %d) = %d", m, n, m);
+      String output = String.format("gcd(%d, %d) = %d", m, n, m);
       // System.out.println(output);
       return m;
     }
@@ -30,9 +30,9 @@ public class GCDCalculator {
     // gcd(a, b) = gcd(m, r) where a = bq + r
     // Prints output code
     int r = m % n;
-    // String output = String.format("%d = %d * q + %d, now finding gcd(%d, %d)", m,
-    // n, r, n, r);
-    // System.out.println(output);
+    String output = String.format("%d = %d * q + %d, now finding gcd(%d, %d)", m,
+    n, r, n, r);
+    System.out.println(output);
     return this.calculateGCD(n, r);
   }
 

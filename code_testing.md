@@ -1,4 +1,4 @@
-# Testing
+## Testing
 This markdown file documents the testing done to the program. There are multiple stages to the testing, firstly, writing and testing the base methods such as `fib(n)` and `gcd(a, b)` are high priority, as they determine the underlying output of the program. 
 
 ### `int calculateGCD(int a, int b)`
@@ -92,7 +92,8 @@ Previous fib number: 1836311903
 To test this, a set of Fibonacci indexes and their corresponding Fibonacci number was used to compare the output from `int fib(int n)`. 
 Numbers were chosen at random, but importantly, the lower and upper bounds {0, 40} were included.
 Furthermore, the method of calculating the sum of Fibonacci numbers up to `n` used the property of `sum({fib(n), fib(n - 1), ..., fib(0)} = fib(n + 2) - 1`.
-This meant that although the user was able to input 40 as their number, the maximum Fibonacci index was 42. Hence why it was included in the set of tests.
+This meant that although the user was able to 
+'][p40 as their number, the maximum Fibonacci index was 42. Hence why it was included in the set of tests.
 
 Testing occurred in the `void testFib()` method and printed the output of the Fibonacci number, and printed if an error had happened on any one of the numbers.
 
@@ -150,6 +151,7 @@ Putting it all together required the following steps.
 
 Note that the function `fib(n+2)-1` was changed to `fib(n+1)-1` as the fib sequence starts from 0, but the first `n` fib numbers starts from 1.
 All testing is still valid after this change.
+
 #### Testing `getNum(String numLabel)`
 The possible values for user input can be:
 1) Not a number
@@ -254,3 +256,67 @@ GCD of the sum of fibonacci numbers up to 30 and 40 is 132
 GCD of the sum of fibonacci numbers up to 38 and 40 is 6765
 GCD of the sum of fibonacci numbers up to 39 and 40 is 2
 ```
+
+#### Testing the final program 
+To test the final program, these test cases were checked to ensure validity of the user inputs:
+1) Number `a` is negative
+2) Number `a` is over 40
+3) Number `b` is not a number
+Output:
+```java
+Welcome! This program that takes 2 numbers (a) and (b) and computes the greatest common
+divisor of the fibonacci numbers at (a) and (b)
+Please input a number between 0 and 40 for number A: -5
+Number out of bounds
+Please input a number between 0 and 40 for number A: 50
+Number out of bounds
+Please input a number between 0 and 40 for number A: 10
+Please input a number between 0 and 40 for number B: abcd
+Please input a number between 0 and 40 for number B: 30
+GCD of the sum of fibonacci numbers up to 10 and 30 is 44
+Would you like to run the program again? (y/n):
+```
+
+To test whether the program outputs the correct GCD,  2 test cases were used.
+1) `a` = 10, `b` = 20
+2) `a` = 38, `b` = 40
+Output:
+```java
+Welcome! This program that takes 2 numbers (a) and (b) and computes the greatest common
+divisor of the fibonacci numbers at (a) and (b)
+Please input a number between 0 and 40 for number A: 10
+Please input a number between 0 and 40 for number B: 20
+10945 = 88 * q + 33, now finding gcd(88, 33)
+88 = 33 * q + 22, now finding gcd(33, 22)
+33 = 22 * q + 11, now finding gcd(22, 11)
+22 = 11 * q + 0, now finding gcd(11, 0)
+GCD of the sum of fibonacci numbers up to 10 and 20 is 11
+Would you like to run the program again? (y/n): y
+Welcome! This program that takes 2 numbers (a) and (b) and computes the greatest common
+divisor of the fibonacci numbers at (a) and (b)
+Please input a number between 0 and 40 for number A: 38
+Please input a number between 0 and 40 for number B: 40
+165580140 = 63245985 * q + 39088170, now finding gcd(63245985, 39088170)
+63245985 = 39088170 * q + 24157815, now finding gcd(39088170, 24157815)
+39088170 = 24157815 * q + 14930355, now finding gcd(24157815, 14930355)
+24157815 = 14930355 * q + 9227460, now finding gcd(14930355, 9227460)
+14930355 = 9227460 * q + 5702895, now finding gcd(9227460, 5702895)
+9227460 = 5702895 * q + 3524565, now finding gcd(5702895, 3524565)
+5702895 = 3524565 * q + 2178330, now finding gcd(3524565, 2178330)
+3524565 = 2178330 * q + 1346235, now finding gcd(2178330, 1346235)
+2178330 = 1346235 * q + 832095, now finding gcd(1346235, 832095)
+1346235 = 832095 * q + 514140, now finding gcd(832095, 514140)
+832095 = 514140 * q + 317955, now finding gcd(514140, 317955)
+514140 = 317955 * q + 196185, now finding gcd(317955, 196185)
+317955 = 196185 * q + 121770, now finding gcd(196185, 121770)
+196185 = 121770 * q + 74415, now finding gcd(121770, 74415)
+121770 = 74415 * q + 47355, now finding gcd(74415, 47355)
+74415 = 47355 * q + 27060, now finding gcd(47355, 27060)
+47355 = 27060 * q + 20295, now finding gcd(27060, 20295)
+27060 = 20295 * q + 6765, now finding gcd(20295, 6765)
+20295 = 6765 * q + 0, now finding gcd(6765, 0)
+GCD of the sum of fibonacci numbers up to 38 and 40 is 6765
+Would you like to run the program again? (y/n): n
+```
+
+The end result stated that the GCD of the sum of Fibonacci numbers `10` and `20` is `11`, which was the expected output, and `38` and `40` is `6765`.
