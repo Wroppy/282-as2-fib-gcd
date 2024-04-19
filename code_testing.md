@@ -1,4 +1,5 @@
-## Testing
+
+# Testing
 This markdown file documents the testing done to the program. There are multiple stages to the testing, firstly, writing and testing the base methods such as `fib(n)` and `gcd(a, b)` are high priority, as they determine the underlying output of the program. 
 
 ### `int calculateGCD(int a, int b)`
@@ -92,8 +93,7 @@ Previous fib number: 1836311903
 To test this, a set of Fibonacci indexes and their corresponding Fibonacci number was used to compare the output from `int fib(int n)`. 
 Numbers were chosen at random, but importantly, the lower and upper bounds {0, 40} were included.
 Furthermore, the method of calculating the sum of Fibonacci numbers up to `n` used the property of `sum({fib(n), fib(n - 1), ..., fib(0)} = fib(n + 2) - 1`.
-This meant that although the user was able to 
-'][p40 as their number, the maximum Fibonacci index was 42. Hence why it was included in the set of tests.
+This meant that although the user was able to input 40 as a number, the maximum Fibonacci index was 42. Hence why it was included in the set of tests.
 
 Testing occurred in the `void testFib()` method and printed the output of the Fibonacci number, and printed if an error had happened on any one of the numbers.
 

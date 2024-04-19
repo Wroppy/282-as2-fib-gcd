@@ -23,7 +23,7 @@ public class GCDCalculator {
     // Base case as remainder is 0
     if (n == 0) {
       String output = String.format("gcd(%d, %d) = %d", m, n, m);
-      // System.out.println(output);
+      System.out.println(output);
       return m;
     }
     
