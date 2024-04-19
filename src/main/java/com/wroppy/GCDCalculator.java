@@ -26,7 +26,7 @@ public class GCDCalculator {
       // System.out.println(output);
       return m;
     }
-
+    
     // gcd(a, b) = gcd(m, r) where a = bq + r
     // Prints output code
     int r = m % n;
