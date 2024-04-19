@@ -65,6 +65,11 @@ public class FibCalculator {
     System.out.println("No error when calculating fib");
   }
 
+  /***
+   * Finds and outputs the largest fibonacci number that can be stored in an int
+   * without overflowing into negatives onto the terminal
+   * 
+   */
   public void findLargestFib() {
     int index = 0;
     while (true) {
@@ -77,6 +82,9 @@ public class FibCalculator {
     }
   }
 
+  /***
+   * Times the fib and recursive fib methods to see which one is faster
+   */
   public void timeFib() {
     int n = 42;
     long start, end;
